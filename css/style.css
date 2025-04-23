@@ -11,12 +11,12 @@
 }
 
 #header.on {
-    background: #ddd;
+    background: #fff;
     border-bottom: 1px solid #999;
 }
 
 #header:hover {
-    background: #ddd;
+    background: #fff;
     border-bottom: 1px solid #999;
 }
 
@@ -41,6 +41,28 @@
     width: 216px;
     height: 48px;
     background: url(../images/ep_logo_white.svg) no-repeat center center/cover;
+    background-size: contain;
+    overflow: hidden;
+}
+
+#header.on .hd_wrap h1 a {
+    filter: invert();
+}
+
+#header.on:hover .hd_wrap h1 a {
+    display: block;
+    width: 216px;
+    height: 48px;
+    background: url(../images/logo.png) no-repeat center center/cover;
+    background-size: contain;
+    overflow: hidden;
+}
+
+#header:hover .hd_wrap h1 a {
+    display: block;
+    width: 216px;
+    height: 48px;
+    background: url(../images/logo.png) no-repeat center center/cover;
     background-size: contain;
     overflow: hidden;
 }
@@ -113,8 +135,15 @@
     border-top: 1px solid #ddd;
 }
 
+#header:hover .gnb>ul>li>a {
+    line-height: 80px;
+    color: #333;
+}
+
 #header.on .gnb>ul>li>a {
     line-height: 80px;
+    color: #333;
+    font-size: 16px;
 }
 
 #header .utils a {
@@ -130,6 +159,14 @@
 
 #header .utils a span {
     margin-top: -3px;
+}
+
+#header.on .utils a {
+    color: #333;
+}
+
+#header:hover .utils a {
+    color: #333;
 }
 
 .main_visual {
