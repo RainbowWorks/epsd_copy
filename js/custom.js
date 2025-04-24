@@ -28,6 +28,14 @@ $(function () {
         speed: 1000,
     });
 
+    $('.main_visual .arrows .prev').on('click', function () {
+        $('.main_visual_slide').slick('slickPrev');
+    });
+
+    $('.main_visual .arrows .next').on('click', function () {
+        $('.main_visual_slide').slick('slickNext');
+    });
+
 
 
 
@@ -44,6 +52,29 @@ $(function () {
         }, /*swiperjs에서 받아왔음*/
 
         speed: 5000, /*2500은 2.5초이다*/
+    });
+
+    $('#footer #lnk').on('change', function () {
+        let lnk = $(this).val();
+        if (lnk) {
+            window.open(lnk)
+        }
+    });
+
+    $('.to_top').on('click', function () {
+        $('html, body').animate({ scrollTop: 0 })
+    });
+
+    $(window).on('scroll', function () {
+        //스크롤 된 양을 구함.
+        let sct = $(window).scrollTop();
+        console.log(sct)
+
+        if (sct > 400) {
+            $('.to_top').addClass('on')
+        } else {
+            $('.to_top').removeClass('on')
+        }
     });
 });
 

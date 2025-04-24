@@ -202,11 +202,93 @@
     color: #fff;
 }
 
-.main_visual .main_visual_slide .txt a {
-    max-width: 1410px;
-    margin: 0 auto;
-    margin-top: 40px;
+.main_visual .arrows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    max-width: 1530px;
+    width: 100%;
 }
+
+.main_visual .arrows button {
+    position: absolute;
+    top: 0;
+    transform: translate(0, -50%);
+
+    width: 80px;
+    height: 80px;
+
+
+    border: 2px solid #fff;
+    box-sizing: border-box;
+
+}
+
+.main_visual .arrows button img {
+    width: 32px;
+    height: 32px;
+}
+
+.main_visual .arrows .prev {
+    left: 0;
+}
+
+.main_visual .arrows .next {
+    right: 0;
+}
+
+
+.main_visual .wheel {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    height: 60px;
+
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.main_visual .wheel::before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 32px;
+    height: 48px;
+    border: 2px solid #fff;
+    border-radius: 16px;
+}
+
+.main_visual .wheel::after {
+    content: "";
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 2px;
+    height: 8px;
+    background: #fff;
+
+    animation: wheel 1s infinite;
+}
+
+@keyframes wheel {
+    0% {
+        transform: translate(-50%, 0);
+    }
+
+    100% {
+        transform: translate(-50%, 4px);
+    }
+}
+
 
 .main_news .swiper-wrapper {
     transition-timing-function: linear;
@@ -345,12 +427,25 @@
 
 #footer a {
     color: #fff;
+
 }
 
 #footer .inner {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#footer .sns_group {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+
+#footer .sns img {
+    width: 32px;
+    height: 32px;
 }
 
 #footer .customer {
@@ -405,4 +500,51 @@
 #footer address {
     color: #fff;
     margin-top: 16px;
+}
+
+#footer .f_lnk {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 40px;
+}
+
+#footer #lnk {
+    background: #333;
+    height: 40px;
+    padding: 0 16px;
+    color: #fff;
+    font-size: 14px;
+    border: 1px solid #ddd;
+}
+
+.to_top {
+    position: fixed;
+    bottom: 64px;
+    right: 0;
+    z-index: 999;
+
+    width: 40px;
+    height: 40px;
+
+    border: 2px solid #aaa;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+}
+
+.to_top button {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.to_top.on {
+    opacity: 1;
+    visibility: visible;
+    right: 160px;
 }
