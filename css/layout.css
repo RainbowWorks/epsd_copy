@@ -27,14 +27,26 @@
 }
 
 .default .title h2 {
-    font-size: 32px;
+    font-size: 40px;
     font-weight: 700;
     text-align: center;
 }
 
 .default .title p {
-    margin-top: 8px;
+    margin-top: 16px;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
     text-align: center;
+
+}
+
+.default_btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 24px;
+    height: 40px;
+    background: #333;
+    border-radius: 16px;
+    color: #fff;
+    white-space: nowrap;
 }

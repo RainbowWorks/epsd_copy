@@ -29,6 +29,7 @@
     max-width: 1410px;
     margin: 0 auto;
     height: 112px;
+    transition: hight 0.4s;
 }
 
 #header.on .hd_wrap {
@@ -42,29 +43,14 @@
     height: 48px;
     background: url(../images/ep_logo_white.svg) no-repeat center center/cover;
     background-size: contain;
-    overflow: hidden;
 }
 
 #header.on .hd_wrap h1 a {
     filter: invert();
 }
 
-#header.on:hover .hd_wrap h1 a {
-    display: block;
-    width: 216px;
-    height: 48px;
-    background: url(../images/logo.png) no-repeat center center/cover;
-    background-size: contain;
-    overflow: hidden;
-}
-
 #header:hover .hd_wrap h1 a {
-    display: block;
-    width: 216px;
-    height: 48px;
-    background: url(../images/logo.png) no-repeat center center/cover;
-    background-size: contain;
-    overflow: hidden;
+    filter: invert();
 }
 
 #header .gnb {
@@ -107,6 +93,7 @@
 
     transform: translate(-50%, 8px);
     background-color: #fff;
+    border: 1px solid #ddd;
 
     opacity: 0;
     visibility: hidden;
@@ -197,27 +184,28 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    max-width: 1170px;
+    max-width: 1410px;
     width: 100%;
 }
 
 .main_visual .main_visual_slide .txt strong {
     display: block;
-    margin-bottom: 16px;
-    font-size: 24px;
-    font-weight: 400;
-    color: #fff;
-}
-
-.main_visual .main_visual_slide .txt p {
+    margin-bottom: 8px;
     font-size: 40px;
     font-weight: 600;
     color: #fff;
 }
 
-.main_news {
+.main_visual .main_visual_slide .txt p {
+    font-size: 56px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.main_visual .main_visual_slide .txt a {
     max-width: 1410px;
     margin: 0 auto;
+    margin-top: 40px;
 }
 
 .main_news .swiper-wrapper {
@@ -244,9 +232,46 @@
     text-align: center;
 }
 
-.main_info {
-    background: #f9f9f9;
+
+.main_banner {
+    position: relative;
+    /*before에 기준이 필요하니까 relative적어줘야한다.*/
+    padding: 120px;
+    /*이미지 세로 길이가 짧다 생각하면 늘리면된다.*/
+    background: url(../images/main_banner02.webp) no-repeat center center/cover;
+    background-attachment: fixed;
 }
+
+.main_banner::before {
+    /*배경 톤다운*/
+    content: "";
+    position: absolute;
+    inset: 0 0 0 0;
+    background: #f0f0f0;
+    opacity: 0.5;
+
+}
+
+.main_banner .title {
+    position: relative;
+    /*어두워졌던 타이틀을 앞으로 빼준다*/
+    margin-bottom: 0;
+    /*글자가 가운데에 위치하게 된다.*/
+
+}
+
+.main_banner .title h2 {
+    color: #333;
+    text-align: left;
+}
+
+.main_banner .title p {
+    margin-bottom: 32px;
+    color: #333;
+    text-align: left;
+}
+
+.main_info {}
 
 .main_info .inner {
     display: flex;
@@ -294,6 +319,23 @@
 
 .main_info .inner .right .itm p {
     margin-top: 24px;
+}
+
+.main_promotion {
+    background: #f9f9f9;
+}
+
+.main_promotion .inner {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    max-width: 1410px;
+}
+
+@media (max-width:768px) {
+    .main_promotion .inner {
+        flex-direction: column;
+    }
 }
 
 #footer {
