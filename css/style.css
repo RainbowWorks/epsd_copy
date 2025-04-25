@@ -306,7 +306,7 @@
 .main_news .slide_wrap .itm strong {
     display: block;
     text-align: center;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     font-weight: 600;
 }
 
@@ -348,7 +348,8 @@
 }
 
 .main_banner .title p {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+    margin-top: 8px;
     color: #333;
     text-align: left;
 }

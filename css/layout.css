@@ -50,3 +50,7 @@
     color: #fff;
     white-space: nowrap;
 }
+
+.default_btn .btn_icon {
+    margin-left: 8px;
+}
